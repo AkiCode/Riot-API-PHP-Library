@@ -37,3 +37,14 @@ This is a PHP Library for Riot Games API, used to make efficient calls to their 
     $someArray['revisionDate']
     $someArray['id']
     $someArray['accountId']
+
+
+**League-Status-V3**
+
+    // Get League Status Information
+    getLeagueStatus();
+
+**Champion-Mastery-V3**
+
+    // Get a player's total champion mastery score, which is the sum of individual champion mastery levels.
+    totalMasteryScore($summonerId);
