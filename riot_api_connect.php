@@ -29,6 +29,8 @@ class RiotApi
     const API_SUMMONER_V3 = 'https://{region}.api.riotgames.com/lol/summoner/v3/summoners';
     const API_LOL_STATUS_V3 = 'https://{region}.api.riotgames.com/lol/status/v3/shard-data';
     const API_CHAMPION_MASTERY_V3 = 'https://{region}.api.riotgames.com/lol/champion-mastery/v3';
+    const API_STATIC_DATA_V3 = 'https://{region}.api.riotgames.com/lol/static-data/v3/';
+    const API_CHAMPION_V3 = 'https://{region}.api.riotgames.com/lol/platform/v3/champions';
     
     // Properties
     private $region;
@@ -74,6 +76,30 @@ class RiotApi
     
     public function totalMasteryScore($summonerId){
             $callUrl = self::API_CHAMPION_MASTERY_V3 . "/scores/by-summoner/" . $summonerId;
+            return $this->request($callUrl);
+    }
+    
+    public function getStaticData($type, $locale = null, $id = null){
+            $callUrl = self::API_STATIC_DATA_V3 . $type;
+            
+            if($id != null){
+                $callUrl.= "/" . $id;
+            }
+            
+            if($locale != null){
+                $callUrl.= "?locale=" . $locale;
+            }
+
+            return $this->request($callUrl);
+    }
+    
+    public function getChampionData($freeToPlay = false){
+            $callUrl = self::API_CHAMPION_V3;
+            
+            if($freeToPlay == true){
+                $callUrl.= "?freeToPlay=true";
+            }
+            
             return $this->request($callUrl);
     }
     
