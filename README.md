@@ -7,3 +7,10 @@ To-Do List:
 - Build a function to handle information caching.
 - Implement error handling.
 - Add more calls.
+
+How-to Use:
+1. Set your API key
+2. Include the library in your project like this: include('riot_api_connect.php');
+3. Make a new instance of the RiotApi Class. Example: $test = new RiotApi('Example Region: euw1');
+
+Now you are ready to go.
