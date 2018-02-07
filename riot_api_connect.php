@@ -19,7 +19,7 @@ To-Do List:
 class RiotApi
 {
     // Enter your API key here, the API key can be found at Riot Games developer site.
-    const API_KEY = 'RGAPI-b5a57cd5-1717-486f-a775-8b68ef206367';
+    const API_KEY = 'REPLACE_WITH_YOUR_API_KEY';
     
     // Rate limit settings (Not yet implemented)
     //$request_limit = 3; // Max ammount of requests within the time limit.
