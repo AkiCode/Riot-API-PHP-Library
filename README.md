@@ -47,5 +47,8 @@ This is a PHP Library for Riot Games API, used to make efficient calls to their 
 
 **LOL-Static-Data-V3**
 
-    // Get any static data. $type = the type of data you want, $locale = the language you want the data presented in, $id = specific id of item/champion, if you want everything then leave it as null.
+    // Get any static data
+    // $type = the type of data you want
+    // $locale = the language you want the data presented in
+    // $id = specific id of item/champion, if you want everything then leave it as null.
     getStaticData($type, $locale = null, $id = null);
