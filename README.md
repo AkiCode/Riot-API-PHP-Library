@@ -53,3 +53,8 @@ This is a PHP Library for Riot Games API, used to make efficient calls to their 
     $id = specific id of item/champion, if you want everything then leave it as null. 
     */
     getStaticData($type, $locale = null, $id = null);
+
+**Champion-V3**
+
+    // Retrieve all champions
+    getChampionData($freeToPlay = false)
