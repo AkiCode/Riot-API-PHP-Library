@@ -1,12 +1,12 @@
 <?php
 /*
-#########################################################################################
-##Riot API PHP Class                                                                   ##
-##Christian Skogstad | AkiCode.com                                                     ##
-##                                                                                     ##
-##This is a PHP Wrapper for Riot Games API, used to make efficient calls to their API. ##
-##You need to provide your own Riot API code down below to make use of the script.     ##
-#########################################################################################
+##########################################################################################
+## Riot API PHP Class                                                                   ##
+## Christian Skogstad | AkiCode.com                                                     ##
+##                                                                                      ##
+## This is a PHP Wrapper for Riot Games API, used to make efficient calls to their API. ##
+## You need to provide your own Riot API code down below to make use of the script.     ##
+##########################################################################################
 
 To-Do List:
 - Rework the URL building to clean up the code and make it more efficient and futureproof.
