@@ -48,3 +48,9 @@ This is a PHP Library for Riot Games API, used to make efficient calls to their 
 
     // Get a player's total champion mastery score, which is the sum of individual champion mastery levels.
     totalMasteryScore($summonerId);
+    
+    // Get all champion mastery entries sorted by number of champion points descending
+    championMasteryEntries($summonerId)
+    
+    // Get a player's total champion mastery score, which is the sum of individual champion mastery levels.
+    getChampionMastery($summonerId, $championId)
