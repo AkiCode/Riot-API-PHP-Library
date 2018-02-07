@@ -19,14 +19,14 @@ To-Do List:
 class RiotApi
 {
     // Enter your API key here, the API key can be found at Riot Games developer site.
-    const API_KEY = 'REPLACE_WITH_YOUR_API_KEY';
+    const API_KEY = 'RGAPI-b5a57cd5-1717-486f-a775-8b68ef206367';
     
     // Rate limit settings (Not yet implemented)
     //$request_limit = 3; // Max ammount of requests within the time limit.
     //$request_timer = 30; // Time limit in seconds
     
     // List of Riot API urls for calls
-    const API_SUMMONER_V3 = 'https://{region}.api.riotgames.com/lol/summoner/v3/summoners/by-name/';
+    const API_SUMMONER_V3 = 'https://{region}.api.riotgames.com/lol/summoner/v3/summoners';
     
     // Properties
     private $region;
@@ -36,12 +36,22 @@ class RiotApi
     Error Handling Here (SoonTM)
     */
     
-    public function __construct($region){
+     public function __construct($region){
             $this->region = $region;
     }
     
+    public function getSummonerByAccountId($accountId){
+            $callUrl = self::API_SUMMONER_V3 . "/by-account/" . $accountId;
+            return $this->request($callUrl);
+    }
+    
     public function getSummonerByName($summonerName){
-            $callUrl = self::API_SUMMONER_V3 . rawurlencode($summonerName);
+            $callUrl = self::API_SUMMONER_V3 . "/by-name/" . rawurlencode($summonerName);
+            return $this->request($callUrl);
+    }
+    
+    public function getSummonerById($summonerId){
+            $callUrl = self::API_SUMMONER_V3 . "/" . $summonerId;
             return $this->request($callUrl);
     }
     
