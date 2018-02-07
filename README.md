@@ -56,5 +56,5 @@ This is a PHP Library for Riot Games API, used to make efficient calls to their 
 
 **Champion-V3**
 
-    // Retrieve all champions
+    // Retrieve all champions (Set $freeToPlay to True if you only want free to play champions)
     getChampionData($freeToPlay = false)
