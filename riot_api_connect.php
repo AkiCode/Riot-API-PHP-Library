@@ -62,6 +62,16 @@ class RiotApi
             return $this->request($callUrl);
     }
     
+    public function championMasteryEntries($summonerId){
+            $callUrl = self::API_CHAMPION_MASTERY_V3 . "/champion-masteries/by-summoner/" . $summonerId;
+            return $this->request($callUrl);
+    }
+    
+    public function getChampionMastery($summonerId, $championId){
+            $callUrl = self::API_CHAMPION_MASTERY_V3 . "/champion-masteries/by-summoner/" . $summonerId . "/by-champion/" . $championId;
+            return $this->request($callUrl);
+    }
+    
     public function totalMasteryScore($summonerId){
             $callUrl = self::API_CHAMPION_MASTERY_V3 . "/scores/by-summoner/" . $summonerId;
             return $this->request($callUrl);
