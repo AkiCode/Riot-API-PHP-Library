@@ -1,12 +1,12 @@
 <?php
 /*
-##########################################################################################
-## Riot API PHP Class                                                                   ##
-## Christian Skogstad | AkiCode.com                                                     ##
-##                                                                                      ##
-## This is a PHP Wrapper for Riot Games API, used to make efficient calls to their API. ##
-## You need to provide your own Riot API code down below to make use of the script.     ##
-##########################################################################################
+#########################################################################################
+##Riot API PHP Class                                                                   ##
+##Christian Skogstad | AkiCode.com                                                     ##
+##                                                                                     ##
+##This is a PHP Wrapper for Riot Games API, used to make efficient calls to their API. ##
+##You need to provide your own Riot API code down below to make use of the script.     ##
+#########################################################################################
 
 To-Do List:
 - Rework the URL building to clean up the code and make it more efficient and futureproof.
@@ -27,6 +27,8 @@ class RiotApi
     
     // List of Riot API urls for calls
     const API_SUMMONER_V3 = 'https://{region}.api.riotgames.com/lol/summoner/v3/summoners';
+    const API_LOL_STATUS_V3 = 'https://{region}.api.riotgames.com/lol/status/v3/shard-data';
+    const API_CHAMPION_MASTERY_V3 = 'https://{region}.api.riotgames.com/lol/champion-mastery/v3';
     
     // Properties
     private $region;
@@ -52,6 +54,16 @@ class RiotApi
     
     public function getSummonerById($summonerId){
             $callUrl = self::API_SUMMONER_V3 . "/" . $summonerId;
+            return $this->request($callUrl);
+    }
+    
+    public function getLeagueStatus(){
+            $callUrl = self::API_LOL_STATUS_V3;
+            return $this->request($callUrl);
+    }
+    
+    public function totalMasteryScore($summonerId){
+            $callUrl = self::API_CHAMPION_MASTERY_V3 . "/scores/by-summoner/" . $summonerId;
             return $this->request($callUrl);
     }
     
