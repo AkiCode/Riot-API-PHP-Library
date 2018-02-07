@@ -17,5 +17,17 @@ This is a PHP Library for Riot Games API, used to make efficient calls to their 
 
 # Functions
 
-    // Get a summoner by summoner name
-    getSummonerByName($summonerName);
+**Summoner Functions**
+   
+
+     // Get a summoner by summoner name
+     getSummonerByName($summonerName);
+
+**Output**
+
+    $someArray['profileIconId]
+    $someArray['name']
+    $someArray['summonerLevel']
+    $someArray['revisionDate']
+    $someArray['id']
+    $someArray['accountId]
