@@ -16,8 +16,8 @@ echo "Account ID: " . $summoner['accountId'] . "<br/><br/>";
 // Fetch Summoner Mastery Information
 $totalMastery = $riotApi->totalMasteryScore($summoner['id']);
 $masteryEntries = $riotApi->championMasteryEntries($summoner['id']);
-// Get Static Data
-$staticChamp = $riotApi->getStaticData('champions', null , $masteryEntries[0]['championId']); // Converting the champion ID into the champions name using the getStaticData function
+// Converting the champion ID into the champions name using the getStaticData function
+$staticChamp = $riotApi->getStaticData('champions', null , $masteryEntries[0]['championId']);
 echo "Total Mastery Score: " . $totalMastery . "<br />";
 echo "Highest Mastery Champion: " . $staticChamp['name'] . "<br />";
 
